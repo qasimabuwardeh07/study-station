@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study OS</title>
+<script src="https://unpkg.com/lucide@latest">
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <i data-lucide="graduation-cap"></i>
+    <span>Study OS</span>
+  </div>
+  <ul class="sidebar-nav">
+    <li><a href="#dashboard" class="nav-link active" data-page="dashboard"><i data-lucide="layout-dashboard"></i><span>Dashboard</span></a></li>
+    <li><a href="#writing" class="nav-link" data-page="writing"><i data-lucide="pen-tool"></i><span>Writing Lab</span></a></li>
+    <li><a href="#sketch" class="nav-link" data-page="sketch"><i data-lucide="palette"></i><span>Sketch Pad</span></a></li>
+    <li><a href="#radio" class="nav-link" data-page="radio"><i data-lucide="music"></i><span>Lo-fi Radio</span></a></li>
+  </ul>
+</nav>
+
+<main class="main-content">
+
+  <!-- ============ DASHBOARD PAGE ============ -->
+  <section id="page-dashboard" class="page active">
+    <header class="page-header">
+      <div class="header-top">
+        <h1 class="page-title">Dashboard</h1>
+        <div class="streak-display">
+          <i data-lucide="flame"></i>
+          <span id="streak-count">0</span>
+          <span class="streak-label">day streak</span>
+        </div>
+      </div>
+      <div class="quote-container">
+        <i data-lucide="quote" class="quote-icon"></i>
+        <p id="quote-text">Loading inspiration...</p>
+      </div>
+    </header>
+
+    <div class="dashboard-grid">
+      <!-- Left: Study Resources -->
+      <div class="card resources-card">
+        <div class="card-header">
+          <i data-lucide="book"></i>
+          <h2>Study Resources</h2>
+        </div>
+        <div class="card-body">
+          <div class="links-section">
+            <h3>Quick Links</h3>
+            <div class="link-input-row">
+              <input type="text" id="link-url" placeholder="Paste URL..." />
+              <input type="text" id="link-title" placeholder="Label..." />
+              <button id="add-link-btn" class="btn btn-sm"><i data-lucide="plus"></i></button>
+            </div>
+            <ul id="links-list" class="links-list"></ul>
+          </div>
+          <div class="notes-section">
+            <h3>Quick Notes</h3>
+            <textarea id="notes-textarea" placeholder="Write your thoughts..." rows="6"></textarea>
+            <span class="auto-save-badge">Auto-saved</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: Pomodoro Timer -->
+      <div class="card timer-card">
+        <div class="card-header">
+          <i data-lucide="timer"></i>
+          <h2>Pomodoro</h2>
+        </div>
+        <div class="card-body timer-body">
+          <div class="timer-mode">
+            <span id="timer-mode-label" class="mode-label">Focus</span>
+          </div>
+          <div class="timer-display" id="timer-display">25:00</div>
+          <div class="timer-progress-container">
+            <div class="progress-bar">
+              <div class="progress-fill" id="timer-progress-fill"></div>
+            </div>
+          </div>
+          <div class="timer-controls">
+            <button id="timer-start-btn" class="btn btn-primary"><i data-lucide="play"></i> Start</button>
+            <button id="timer-pause-btn" class="btn btn-secondary" disabled><i data-lucide="pause"></i> Pause</button>
+            <button id="timer-reset-btn" class="btn btn-secondary"><i data-lucide="rotate-ccw"></i> Reset</button>
+          </div>
+          <div class="timer-stats">
+            <span>Sessions today: <strong id="today-sessions">0</strong></span>
+            <span>Total: <strong id="total-sessions">0</strong></span>
+          </div>
+          <div class="daily-progress">
+            <span class="daily-progress-label">Daily Goal</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="daily-progress-fill"></div>
+            </div>
+            <span id="daily-progress-text">0 / 8 sessions</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Task Board -->
+      <div class="card tasks-card">
+        <div class="card-header">
+          <i data-lucide="list"></i>
+          <h2>Tasks</h2>
+        </div>
+        <div class="card-body">
+          <div class="task-input-row">
+            <input type="text" id="task-input" placeholder="Add a new task..." />
+            <button id="add-task-btn" class="btn btn-primary"><i data-lucide="plus"></i></button>
+          </div>
+          <ul id="tasks-list" class="tasks-list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WRITING LAB PAGE ============ -->
+  <section id="page-writing" class="page">
+    <header class="page-header">
+      <div class="header-top">
+        <h1 class="page-title">Writing Lab</h1>
+        <button id="download-txt-btn" class="btn btn-primary"><i data-lucide="download"></i> Download .txt</button>
+      </div>
+      <p class="page-subtitle">Distraction-free. Just write.</p>
+    </header>
+    <div class="writing-editor">
+      <textarea id="writing-textarea" placeholder="Start writing here..." spellcheck="true"></textarea>
+    </div>
+  </section>
+
+  <!-- ============ SKETCH PAD PAGE ============ -->
+  <section id="page-sketch" class="page">
+    <header class="page-header">
+      <div class="header-top">
+        <h1 class="page-title">Sketch Pad</h1>
+        <div class="sketch-toolbar">
+          <label class="tool-label">
+            <i data-lucide="palette"></i>
+            <input type="color" id="sketch-color" value="#6366f1" />
+          </label>
+          <label class="tool-label">
+            <i data-lucide="circle"></i>
+            <input type="range" id="sketch-size" min="1" max="20" value="4" />
+          </label>
+          <button id="sketch-clear-btn" class="btn btn-secondary"><i data-lucide="trash-2"></i> Clear</button>
+          <button id="sketch-save-btn" class="btn btn-primary"><i data-lucide="save"></i> Save Image</button>
+        </div>
+      </div>
+    </header>
+    <div class="canvas-container">
+      <canvas id="sketch-canvas"></canvas>
+    </div>
+  </section>
+
+  <!-- ============ RADIO PAGE ============ -->
+  <section id="page-radio" class="page">
+    <header class="page-header">
+      <div class="header-top">
+        <h1 class="page-title">Lo-fi Radio</h1>
+      </div>
+    </header>
+    <div class="radio-player">
+      <div class="player-art">
+        <i data-lucide="music" class="player-icon"></i>
+      </div>
+      <div class="player-info">
+        <h3 id="track-name">No track selected</h3>
+        <p id="track-artist">Lo-fi Beats</p>
+      </div>
+      <div class="player-controls">
+        <button id="radio-play-btn" class="btn btn-primary btn-lg"><i data-lucide="play"></i></button>
+        <div class="volume-control">
+          <i data-lucide="volume-2"></i>
+          <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" />
+        </div>
+      </div>
+      <div class="player-progress">
+        <input type="range" id="seek-slider" min="0" max="100" value="0" />
+        <div class="time-display">
+          <span id="current-time">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="playlist">
+      <h3>Playlist</h3>
+      <ul id="playlist-list" class="playlist-list"></ul>
+    </div>
+  </section>
+
+</main>
+
+<div id="notification-toast" class="toast hidden"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
