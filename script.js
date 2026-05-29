@@ -19,16 +19,31 @@
   const DAILY_GOAL_DEFAULT = 8;
 
   const TRACKS = [
-    { name: 'Midnight Vibes', artist: 'Lo-fi Dreams', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', duration: '5:06' },
-    { name: 'Study Session', artist: 'Chill Beats', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3', duration: '4:32' },
-    { name: 'Rainy Day', artist: 'Lo-fi Dreams', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3', duration: '6:15' },
-    { name: 'Focus Flow', artist: 'Zen Tones', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3', duration: '3:58' },
-    { name: 'Late Nights', artist: 'Chill Beats', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3', duration: '5:42' },
-    { name: 'Warm Glow', artist: 'Lo-fi Dreams', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3', duration: '4:18' },
-    { name: 'Serenity', artist: 'Zen Tones', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3', duration: '5:33' },
-    { name: 'City Lights', artist: 'Chill Beats', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3', duration: '4:47' },
-  ];
-
+    { 
+        name: 'سورة البقرة', 
+        artist: 'مشاري العفاسي', 
+        src: 'https://server8.mp3quran.net/afs/002.mp3', 
+        duration: '2:04:31' 
+    },
+    { 
+        name: 'سورة الكهف', 
+        artist: 'عبد الرحمن السديس', 
+        src: 'https://server7.mp3quran.net/sds/018.mp3', 
+        duration: '28:15' 
+    },
+    { 
+        name: 'سورة الملك', 
+        artist: 'ماهر المعيقلي', 
+        src: 'https://server12.mp3quran.net/maher/067.mp3', 
+        duration: '07:34' 
+    },
+    { 
+        name: 'سورة الرحمن', 
+        artist: 'إسلام صبحي', 
+        src: 'https://server14.mp3quran.net/islam/055.mp3', 
+        duration: '11:18' 
+    }
+];
   const QUOTES = [
     'The secret of getting ahead is getting started. — Mark Twain',
     'The only way to do great work is to love what you do. — Steve Jobs',
