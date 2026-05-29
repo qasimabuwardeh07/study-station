@@ -22,25 +22,25 @@
     { 
         name: 'سورة البقرة', 
         artist: 'مشاري العفاسي', 
-        src: 'https://server8.mp3quran.net/afs/002.mp3', 
+        src: 'https://download.quranicaudio.com/quran/mishari_rashid_alafasy/002.mp3', 
         duration: '2:04:31' 
     },
     { 
         name: 'سورة الكهف', 
         artist: 'عبد الرحمن السديس', 
-        src: 'https://server7.mp3quran.net/sds/018.mp3', 
+        src: 'https://download.quranicaudio.com/quran/abdurrahmaan_as-sudays/018.mp3', 
         duration: '28:15' 
     },
     { 
         name: 'سورة الملك', 
         artist: 'ماهر المعيقلي', 
-        src: 'https://server12.mp3quran.net/maher/067.mp3', 
+        src: 'https://download.quranicaudio.com/quran/maher_al_muaiqly/067.mp3', 
         duration: '07:34' 
     },
     { 
         name: 'سورة الرحمن', 
-        artist: 'إسلام صبحي', 
-        src: 'https://server14.mp3quran.net/islam/055.mp3', 
+        artist: 'مشاري العفاسي', 
+        src: 'https://download.quranicaudio.com/quran/mishari_rashid_alafasy/055.mp3', 
         duration: '11:18' 
     }
 ];
